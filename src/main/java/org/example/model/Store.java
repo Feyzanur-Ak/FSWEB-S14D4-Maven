@@ -3,9 +3,9 @@ package org.example.model;
 public class Store {
     public static void main(String[] args) {
 
-        ProductForSale chocolate=new Chocolate("150",10,"dark chocolate");
-        ProductForSale coke=new Coke("100",20,"Orange Coke");
-        ProductForSale bread=new Bread("50",30);
+        ProductForSale chocolate=new Chocolate("Sweet Chocolate",150,"dark chocolate");
+        ProductForSale coke=new Coke("Cola Turka",100,"Orange Coke");
+        ProductForSale bread=new Bread("Wheat Brad",50,"Bread");
 
         ProductForSale[]products={chocolate,coke,bread};
 

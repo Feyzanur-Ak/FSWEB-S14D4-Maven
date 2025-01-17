@@ -3,24 +3,26 @@ package org.example.model;
 public class Bread extends ProductForSale {
      private String paste;
 
-    public Bread(String price, int description, String type) {
-        super(price, description, type);
-        this.paste="wheat bread";
-
+    public Bread(String type, double price, String description,String paste) {
+        super(type, price, description);
+        this.paste=paste;
     }
 
-    public Bread(String price, int description) {
-        super(price, description, "Generic Bread");
-        this.paste="wheat bread";
 
+    public Bread(String type, double price, String description) {
+        super(type, price, description);
     }
 
 
     @Override
     public void showDetails() {
-        System.out.println("Product Type: " + getType());
-        System.out.println("Price: " + getPrice());
-        System.out.println("Description: " + getDescription());
-        System.out.println("Paste Type: " + paste);
+        System.out.println(super.toString()+this);
+    }
+
+    @Override
+    public String toString() {
+        return "Bread{" +
+                "paste='" + paste + '\'' +
+                '}';
     }
 }

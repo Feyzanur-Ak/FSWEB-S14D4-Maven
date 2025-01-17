@@ -1,22 +1,25 @@
 package org.example.model;
 
 public abstract class ProductForSale {
-    private String price;
-    private int description;
+
     private  String type;
+    private double price;
+    private String description;
 
 
-    public ProductForSale(String price, int description, String type) {
+
+
+    public ProductForSale(String type,double price, String description) {
         this.price = price;
         this.description = description;
         this.type = type;
     }
 
-    public String getPrice() {
+    public double getPrice() {
         return price;
     }
 
-    public int getDescription() {
+    public String getDescription() {
         return description;
     }
 
@@ -25,10 +28,23 @@ public abstract class ProductForSale {
     }
 
     public double getSalesPrice(int quantity){
-        return quantity*Double.parseDouble(price);
+        return quantity*price;
     }
 
-    public abstract void showDetails();
+    public  final void printHello(){ /* final keywodünü koyduğumuz için
+       override edemez ama kullanma ihtiyacı olunca kullanabilir */
+        System.out.println("Hello");
+    }
 
+    public abstract void showDetails(); // childlar kesinlikle override etmeli
+
+    @Override
+    public String toString() {
+        return "ProductForSale{" +
+                ", type='" + type + '\'' +
+                "price=" + price +
+                ", description='" + description + '\'' +
+                '}';
+    }
 
 }
